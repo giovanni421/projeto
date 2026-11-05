@@ -1,157 +1,235 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Harry Potter</title>
-	<link rel="icon" href="potter.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Harry Potter</title>
+    <link rel="icon" href="potter.png">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px;
+        font-family: Georgia, "Times New Roman", serif;
+         color: aliceblue;
+            background-image: linear-gradient(rgba(8, 12, 25, 0.55), rgba(8, 12, 25, 0.75)), url('hogwarts.jpg');
+            background-size: cover;
+        background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        a {
+            color: #f0cc78;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        a:hover {
+            color: white;
+            text-shadow: 0 0 10px #d9ad50;
+        }
+
+        h1, h2 {
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        h1 {
+            animation: aparecer 1s ease-out;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #c79f54;
+            margin: 24px 0;
+        }
+
+        audio, video {
+            max-width: 100%;
+        }
+
+        form {
+            max-width: 700px;
+            margin: 24px auto;
+        }
+
+        fieldset {
+            border: 2px solid #c79f54;
+            border-radius: 12px;
+            padding: 24px;
+            background: rgba(10, 15, 30, 0.82);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+        }
+
+        legend {
+            padding: 8px 12px;
+        }
+
+        label, legend, input, p {
+            line-height: 1.5;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            max-width: 450px;
+            padding: 10px;
+            border: 1px solid #c79f54;
+            border-radius: 6px;
+            background: #f8f4e8;
+            color: #201a12;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #f5d887;
+            box-shadow: 0 0 0 3px rgba(245, 216, 135, 0.3);
+        }
+
+        input[type="radio"], input[type="range"] {
+            accent-color: #c79f54;
+        }
+
+        input[type="submit"] {
+            padding: 10px 24px;
+         border: 0;
+        border-radius: 6px;
+            background: #c79f54;
+          color: #17120a;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        input[type="submit"]:hover {
+            background: #f0cc78;
+            transform: translateY(-2px);
+        }
+
+        #filmes {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+
+        #filmes td {
+            width: 25%;
+            padding: 12px;
+     text-align: center;
+            vertical-align: top;
+         border: 1px solid #c79f54;
+            border-radius: 8px;
+    background: rgba(10, 15, 30, 0.8);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+            transition: transform 0.25s, background 0.25s;
+        }
+
+        #filmes td:hover {
+            transform: translateY(-5px);
+            background: rgba(35, 31, 49, 0.95);
+        }
+
+        #filmes img {
+           max-width: 100%;
+         height: auto;
+            border-radius: 5px;
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            body {
+             padding: 16px;
+          background-attachment: scroll;
+            }
+
+            #filmes, #filmes tbody, #filmes tr, #filmes td {
+                display: block;
+                width: 100%;
+            }
+
+            #filmes td {
+                margin-bottom: 12px;
+            }
+        }
+    </style>
 </head>
-<body background="hogwarts.jpg">
-	<a href="curiosidades.html" style="font-size: 30px; color: white;" >Clique aqui para ver os feitiços de Hogwarts</a>
+<body>
+    <a href="Curiosidades.html" style="font-size: 30px; color: white;">Clique aqui para ver os feitiços de Hogwarts</a>
 
-	<br><br><a href="#filmes" accesskey="o" style="font-size: 30px; color: white;">Filmes da franquia Harry Potter</a>
-	<small style="font-size: 20px; color: white;">(alt+o)</small>
+    <br><br><a href="#filmes" accesskey="o" style="font-size: 30px; color: white;">Filmes da franquia Harry Potter</a>
+    <small style="font-size: 20px; color: white;">(alt+o)</small>
 
-	<hr>
-	
-<h1 align="center" style="font-size: 50px; color: aliceblue"; ><u><i>Harry Potter</i></u></h1>
-	<hr style="color: #C79F54">
+    <hr>
 
-	<audio src="harry.mp3" autoplay controls type="audio/mp3"></audio>
+    <h1 align="center" style="font-size: 50px; color: aliceblue;"><u><i>Harry Potter</i></u></h1>
+    <hr style="color: #C79F54">
 
-<hr>
+    <audio src="harry.mp3" autoplay controls type="audio/mp3"></audio>
+    <hr>
 
-<form>
+    <form>
+        <fieldset>
+            <legend style="color: #C79F54"><b><small>🗂️Cadastro para virar auror</small></b></legend>
 
-		<fieldset>
-			<legend style="color: #C79F54"><b><small>🗂️Cadastro para virar auror</small></b></legend>
+         <label for="nome" style="color:#C79F54">Nome:</label><br>
+            <input id="nome" name="nome" type="text" maxlength="30" minlength="3" required placeholder="Digite seu nome completo sem abreviações">
 
-		<label for="nome" style="color:#C79F54">Nome:</label><br>
-		<input id="nome" name="nome" type="text" size="40" maxlength="30" minlength="3" required placeholder="Digite seu nome completo sem abrevições">
-		
-		<br><br>
-		<label for="nome" style="color: #C79F54;">Há quantos anos que se formou em Hogwarts?</label><br>
-		<input type="number" id="idade" name="idade" min="7" max="50"
-		step="1"><br>
-		
-<br><br>
-		<label for ="casa" style="color: #C79F54;">Casa que era em hogwarts:</label><br>
-		<p style="color: chocolate;"> Grifinoria <input type="radio" name="casa" value="Grifinoria" > </p>
-		<p style="color: darkgoldenrod;"> Lufa Lufa <input type="radio" name="casa" value="Lufa Lufa" > </p>
-		<p style="color: blue;"> Corvinal<input type="radio" name="casa" value="Corvinal" ></p>
-		<p style="color: darkgreen;"> Sonserina<input type="radio" name="casa" value="Sonserina" > </p>
+            <br><br>
+            <label for="idade" style="color: #C79F54;">Há quantos anos que se formou em Hogwarts?</label><br>
+            <input type="number" id="idade" name="idade" min="7" max="50" step="1">
 
-		<label for="nome" style="color: #C79F54;">Feitiço Favorito</label><br>
-		<input id="nome" name="nome" type="text" size="40" maxlength="30" minlength="3" required placeholder="Digite Seu Feitiço Favorito">
+            <br><br>
+         <label for="casa" style="color: #C79F54;">Casa que era em Hogwarts:</label><br>
+            <p style="color: chocolate;">Grifinória <input type="radio" name="casa" value="Grifinoria"></p>
+            <p style="color: darkgoldenrod;">Lufa-Lufa <input type="radio" name="casa" value="Lufa Lufa"></p>
+            <p style="color: blue;">Corvinal <input type="radio" name="casa" value="Corvinal"></p>
+            <p style="color: darkgreen;">Sonserina <input type="radio" name="casa" value="Sonserina"></p>
 
-	
+            <label for="feitiço" style="color: #C79F54;">Feitiço Favorito</label><br>
+            <input id="feitiço" name="feitiço" type="text" maxlength="30" minlength="3" required placeholder="Digite seu feitiço favorito">
 
-		<br><br>
-		<p style="color: #C79F54;"><label for="capacidade">
-		Quanto você se sente preparado para a função:
-		</label><br></p>
+            <br><br>
+            <p style="color: #C79F54;"><label for="capacidade">Quanto você se sente preparado para a função:</label><br></p>
+            <p style="color: #C79F54;">0<input type="range" name="capacidade" id="capacidade" min="0" max="10" value="2">10</p>
+            <br><br>
+            <input type="submit" value="Enviar">
+        </fieldset>
+    </form>
 
-		<p style="color: #C79F54;">0<input type="range" name="capacidade" id="capacidade"
-					min="0" max="10" value="2"> 10</p>
-					<br><br>
-		<input type="submit" value="Enviar">
+    <hr>
 
-</fieldset>
-</form>
+    <p style="font-size:25px; color: #29f017;"><b>Você gosta de Harry Potter e às vezes se faz a seguinte pergunta: Qual casa eu seria em Hogwarts? Descubra agora!</b></p>
+    <a href="https://www.harrypotter.com/pt/news/discover-your-hogwarts-house-on-wizarding-world" target="_blank" style="font-size: 30px; color: #C79F54;"><b>Descubra qual casa você seria em Hogwarts</b></a>
 
-<hr>
+    <hr>
 
-<p style="font-size:25px; color: #29f017;"><b>Você gosta de Harry potter e as vezes se faz a seguinte pergunta: Qual casa eu seria em hogwarts? Descubra agora!</b></p>
+    <h1 align="center" style="font-size: 50px; color: aliceblue;">Assista ao trailer de Harry Potter e a Pedra Filosofal!</h1>
+    <p align="center">
+        <video controls width="50%" poster="capa.jpeg">
+            <source src="harry.mp4" type="video/mp4">
+        </video>
+    </p>
 
-<a href="https://pt.quizur.com/quiz/teste-das-casas-de-hogwarts-UArG" target="_blank" style="font-size: 30px;  color: #C79F54;"><b>Descubra qual casa você seria em Hogwarts</b></a>
+    <hr>
 
-<hr>
-
-<h1 align="center" style="font-size: 50px; color: aliceblue; ">Assista ao trailer de Harry Potter e a pedra filosofal!</h1>
-
-<p align="center">
- <video controls width="50%"  poster="capa.jpeg">
- 	<source src="harry.mp4" type="video/mp4">
- </video>
-</p>
-
-<hr>
-
-<h1 align="center" style="font-size: 50px; color: aliceblue; ">Veja quais são os filmes da franquia Harry Potter </h1>
-
-<table id="filmes" border="1">
-<tr align="center">
-
-<td>
-<p style="font-size: 45xp; color:  aliceblue;">
-<img src="1.jfif" title="Harry Potter e a pedra filosofal"
-			alt="Harry Potter e a pedra filosofal" width="201px">
-			<br>
-			Harry Potter e a pedra filosofal</p>
-			</td>
-
-			<td>
-<p style="font-size: 45xp; color: aliceblue;">
-<img src="2.jfif" title="Harry Potter e a Câmara Secreta"
-			alt="Harry Potter e a Câmara Secreta" width="225px">
-			<br>
-			Harry Potter e a Câmara Secreta</p>
-			</td>
-
-			
-			<td>
-<p style="font-size: 45xp; color:  aliceblue;">
-<img src="3.jpg " title="Harry Potter e o Prisioneiro de Askaban"
-			alt="Harry Potter e o Prisioneiro de Askaban" width="206px">
-			<br>
-			Harry Potter e o Prisioneiro de Askaban</p>
-			</td>
-
-			<td>
-<p style="font-size: 45xp; color: aliceblue;">
-<img src="4.jpg" title="Harry Potter e o Calice de Fogo"
-			alt="Harry Potter e o Calice de Fogo" width="206px">
-			<br>
-			Harry Potter e o Calice de Fogo</p>
-			</td>
-
-
-<td>
-<p style="font-size: 45xp; color: aliceblue;">
-<img src="5.webp" title="Harry Potter e a Ordem da Fênix"
-			alt="Harry Potter e a Ordem Da Fênix" width="206px">
-			<br>
-			Harry Potter e a Ordem da Fênix</p>
-			</td>
-
-			<td>
-<p style="font-size: 45xp; color: aliceblue;">
-<img src="6.jpg" title="Harry Potter e o Enigma Do Princípe"
-			alt="Harry Potter e o Enigma Do Princípe" width="206px">
-			<br>
-			Harry Potter e o Enigma Do Princípe</p>
-			</td>
-
-
-<td>
-<p style="font-size: 45xp; color: aliceblue;">
-<img src="7.jpg" title="Harry Potter e as Relíquias da Morte Parte 1"
-			alt="Harry Potter e as Relíquias da Morte Parte 1" width="206px">
-			<br>
-			Harry Potter e as Relíquias da Morte Parte 1</p>
-			</td>
-
-
-<td>
-<p style="font-size: 45xp; color: aliceblue;">
-<img src="8.jpg" title="Harry Potter e as Relíquias da Morte Parte 2"
-			alt="Harry Potter e as Relíquias da Morte Parte 2" width="206px">
-			<br>
-			Harry Potter e as Relíquias da Morte Parte 2</p>
-			</td>
-
-
-			</table>
-
-		</body>
+    <h1 align="center" style="font-size: 50px; color: aliceblue;">Veja quais são os filmes da franquia Harry Potter</h1>
+    <table id="filmes" border="1">
+        <tr align="center">
+            <td><p style="font-size: 25px; color: aliceblue;"><img src="1.jfif" title="Harry Potter e a Pedra Filosofal" alt="Harry Potter e a Pedra Filosofal" width="201"><br>Harry Potter e a Pedra Filosofal</p></td>
+            <td><p style="font-size: 25px; color: aliceblue;"><img src="2.jfif" title="Harry Potter e a Câmara Secreta" alt="Harry Potter e a Câmara Secreta" width="225"><br>Harry Potter e a Câmara Secreta</p></td>
+            <td><p style="font-size: 25px; color: aliceblue;"><img src="3.jpg" title="Harry Potter e o Prisioneiro de Azkaban" alt="Harry Potter e o Prisioneiro de Azkaban" width="206"><br>Harry Potter e o Prisioneiro de Azkaban</p></td>
+            <td><p style="font-size: 25px; color: aliceblue;"><img src="4.jpg" title="Harry Potter e o Cálice de Fogo" alt="Harry Potter e o Cálice de Fogo" width="206"><br>Harry Potter e o Cálice de Fogo</p></td>
+            <td><p style="font-size: 25px; color: aliceblue;"><img src="5.webp" title="Harry Potter e a Ordem da Fênix" alt="Harry Potter e a Ordem da Fênix" width="206"><br>Harry Potter e a Ordem da Fênix</p></td>
+            <td><p style="font-size: 25px; color: aliceblue;"><img src="6.jpg" title="Harry Potter e o Enigma do Príncipe" alt="Harry Potter e o Enigma do Príncipe" width="206"><br>Harry Potter e o Enigma do Príncipe</p></td>
+            <td><p style="font-size: 25px; color: aliceblue;"><img src="7.jpg" title="Harry Potter e as Relíquias da Morte Parte 1" alt="Harry Potter e as Relíquias da Morte Parte 1" width="206"><br>Harry Potter e as Relíquias da Morte Parte 1</p></td>
+            <td><p style="font-size: 25px; color: aliceblue;"><img src="8.jpg" title="Harry Potter e as Relíquias da Morte Parte 2" alt="Harry Potter e as Relíquias da Morte Parte 2" width="206"><br>Harry Potter e as Relíquias da Morte Parte 2</p></td>
+        </tr>
+    </table>
+</body>
 </html>
